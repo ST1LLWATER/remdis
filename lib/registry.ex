@@ -32,7 +32,7 @@ defmodule KV.Registry do
 
   @impl true
   def handle_call({:lookup, name}, _from, names) do
-    {:reply, Map.get(names, name), names}
+    {:reply, Map.fetch(names, name), names}
   end
 
   @impl true
